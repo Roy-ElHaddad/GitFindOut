@@ -3,8 +3,7 @@
     width: 36.875rem;
     height: 31.25rem;
     flex-shrink: 0;
-    margin-left: 40rem;
-    margin-top: 6.94rem;
+    margin: 6.94rem auto;
     background: var(--pink, #FB8F8E);
     display: flex;
     flex-direction: column;
