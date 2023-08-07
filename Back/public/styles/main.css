@@ -1,0 +1,10 @@
+@import 'shared/header.css';
+
+body{
+    background-image: url('../images/backgroundImg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    
+}
+

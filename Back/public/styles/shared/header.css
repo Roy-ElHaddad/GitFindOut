@@ -1,0 +1,15 @@
+.navbar {
+    display: flex;
+}
+
+.navbar .logo{
+    height: 151px;
+    width: 223px;
+}
+
+.list{
+    display: flex;
+    /* justify-content: center; */
+}
+
+

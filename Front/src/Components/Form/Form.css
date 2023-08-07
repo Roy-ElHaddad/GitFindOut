@@ -1,0 +1,64 @@
+.form_section{
+    align-self: center;
+    width: 36.875rem;
+    height: 31.25rem;
+    flex-shrink: 0;
+    margin-left: 40rem;
+    margin-top: 6.94rem;
+    background: var(--pink, #FB8F8E);
+    display: flex;
+    flex-direction: column;
+    column-gap: 0;
+  }
+  
+form h2{
+    width: 29.6875rem;
+    color: #FFF;
+    font-family: Noto Sans;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin : 1.88rem 2.94rem;
+    padding: 0%;
+  }
+
+form label{
+  width: 6.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  color: #000;
+  font-family: Noto Sans;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 7.19rem;
+  margin-bottom: 0rem;
+  margin-top: 0%;
+  padding: 0%;
+}
+
+form input{
+  width: 22.5rem;
+  height: 4.6875rem;
+  flex-shrink: 0; 
+  margin : 0 7.19rem 0 7.19rem;
+  background: var(--white, #FFF);
+  padding: 0%;
+
+}
+
+.formp{
+  margin: 0rem 5.5rem 2.13rem 6.25rem;
+  color: #000;
+  font-family: Noto Sans;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.formLink{
+  text-decoration: none;
+}

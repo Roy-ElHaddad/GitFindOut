@@ -1,0 +1,18 @@
+.form_button{
+    display: flex;
+    width: 10.625rem;
+    height: 3.125rem;
+    padding: 0.625rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    flex-shrink: 0;
+    background: var(--secondary, #669FA3);
+    color: #FFF;
+    font-family: Noto Sans;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin:  2.31rem 13.12rem 2.31rem;
+}
