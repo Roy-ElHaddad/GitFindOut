@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    psuedo : {
+    name : {
         type : String,
         required : true
         },
-    mail : { 
+    email : { 
         type : String,
         required : true
         },

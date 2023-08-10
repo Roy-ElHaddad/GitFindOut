@@ -1,0 +1,19 @@
+
+.creationbar-container{
+    display: flex;
+    width: 64.125rem;
+    height: 3.4375rem;
+    align-items: center;
+    gap: 1.3125rem;
+    flex-shrink: 0;
+    margin : auto;
+}
+
+.creationbar h1{
+    color: #FFF;
+    font-family: Noto Sans;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

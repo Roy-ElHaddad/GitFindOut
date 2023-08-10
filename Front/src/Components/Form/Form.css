@@ -9,6 +9,18 @@
     flex-direction: column;
     column-gap: 0;
   }
+
+.signupForm_section{
+    align-self: center;
+    width: 36.875rem;
+    height: 37.5rem;
+    flex-shrink: 0;
+    margin: 6.94rem auto;
+    background: var(--pink, #FB8F8E);
+    display: flex;
+    flex-direction: column;
+    column-gap: 0;
+  }
   
 form h2{
     width: 29.6875rem;
