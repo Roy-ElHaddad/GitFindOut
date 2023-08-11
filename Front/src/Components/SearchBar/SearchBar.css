@@ -1,14 +1,21 @@
+.searchbar-container {
+	display: flex;
+	justify-content: flex-end; /* Position the search bar to the right */
+	padding: 1rem; /* Add padding as needed */
+  }
+
 .searchbar {
 	display: flex;
+	justify-content: center;
 	width: 37.9375rem;
 	height: 3.4375rem;
-	justify-content: space-between;
 	align-items: center;
 	flex-shrink: 0;
 	background: var(--white, #fff);
 	padding: 0;
 	margin-top: 4.5rem ;
-    margin-left : 75rem;
+    /* margin-left : 75rem; */
+	/* overflow-x: hidden; */
 }
 
 .searchbar input {

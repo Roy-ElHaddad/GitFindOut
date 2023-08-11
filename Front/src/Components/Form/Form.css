@@ -1,20 +1,19 @@
 .form_section{
     align-self: center;
     width: 36.875rem;
-    height: 31.25rem;
+    height: 25rem;
     flex-shrink: 0;
     margin: 6.94rem auto;
     background: var(--pink, #FB8F8E);
     display: flex;
     flex-direction: column;
     column-gap: 0;
-    /* test de syncro */
   }
 
 .signupForm_section{
     align-self: center;
     width: 36.875rem;
-    height: 37.5rem;
+    height: rem;
     flex-shrink: 0;
     margin: 6.94rem auto;
     background: var(--pink, #FB8F8E);
@@ -27,7 +26,7 @@ form h2{
     width: 29.6875rem;
     color: #FFF;
     font-family: Noto Sans;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -53,19 +52,20 @@ form label{
 
 form input{
   width: 22.5rem;
-  height: 4.6875rem;
+  height: 2rem;
   flex-shrink: 0; 
-  margin : 0 7.19rem 0 7.19rem;
+  margin : 0.5rem 7.19rem 0.5rem 7.19rem;
   background: var(--white, #FFF);
-  padding: 0%;
-
+  padding: 0rem 0.5rem;
+  box-sizing: border-box;
+  
 }
 
 .formp{
-  margin: 0rem 5.5rem 2.13rem 6.25rem;
+  margin: -1rem 5.5rem 2.13rem 8.25rem;
   color: #000;
   font-family: Noto Sans;
-  font-size: 1.5625rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

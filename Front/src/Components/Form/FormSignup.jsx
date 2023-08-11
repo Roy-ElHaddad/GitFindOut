@@ -25,9 +25,9 @@ export default function signupForm ({handleSubmit}){
                 <input type="text"  name="username" id="username" onChange={(e) => setName(e.target.value)} />
                 <label htmlFor="email">Mail :</label>
                 <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)} />
-                <label htmlFor="password">Mot de passe:</label>
+                <label htmlFor="password">Mot de passe :</label>
                 <input type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)} />
-                <label htmlFor="confirmPassword">Confirmation du mot de passe:</label>
+                <label htmlFor="confirmPassword">Confirmation du mot de passe :</label>
                 <input type="password" name="confirmPassword" id="confirmPassword" onChange={(e) => setConfirmPassword(e.target.value)} />
             </form>
             <FormButton onPress={submitForm} title={"Créez votre compte"}/>
