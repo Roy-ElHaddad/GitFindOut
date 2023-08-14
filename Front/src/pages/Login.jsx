@@ -5,13 +5,14 @@ import Form from '../Components/Form/Form';
 function Login(){
     const loginEvent = async(email, password) =>{
         try{
-            const response = await axios.post('http://localhost:3000/login', {
+            const response = await axios.post('http://localhost:3000/api/auth', {
                 email:email,
                 password:password
             })
             console.log(response.data);
             console.log("test");
-            if (response.data.message === "Login Successful") {
+            
+            if (response.status === 200) {
                 window.location.href = '/Dashboard'
             }
         }
