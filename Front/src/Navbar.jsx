@@ -1,7 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link , useLocation} from 'react-router-dom';
 import './App.css';
 
 export default function Navbar() {
+	const location = useLocation();
+	const shouldShowLogout = location.pathname !== '/' && location.pathname !== '/About';
+
 	return (
 		<>
 			<nav className="navbar">
@@ -15,6 +18,11 @@ export default function Navbar() {
 					<Link className="searchIcon" to="/About">
 						<span className="material-symbols-outlined">info</span>
 					</Link>
+					{shouldShowLogout && (
+						<Link className="logoutIcon" to="/">
+						<span className="material-symbols-outlined">mode_off_on</span>
+						</Link>
+					)}
 				</ul>
 			</nav>
 		</>

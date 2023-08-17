@@ -37,3 +37,6 @@ body{
   color: #FFFFFF;
 }
 
+.navbar ul{
+  margin-right: 2rem;
+}
