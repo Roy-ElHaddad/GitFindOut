@@ -13,7 +13,7 @@
 .signupForm_section{
     align-self: center;
     width: 36.875rem;
-    height: rem;
+    /* height: rem; */
     flex-shrink: 0;
     margin: 6.94rem auto;
     background: var(--pink, #FB8F8E);

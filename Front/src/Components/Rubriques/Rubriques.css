@@ -3,7 +3,18 @@
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
+    height: 25rem;
+    overflow-y: scroll; 
 }
+
+.main-container::-webkit-scrollbar {
+    width: 0.5rem; /* Adjust as needed to match your design */
+}
+
+.main-container::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
 .rubriques-container{
     display: flex;
     width: 100%;
@@ -25,7 +36,7 @@
     line-height: normal;
     padding: 0%;
     margin: 0rem;
-    width: 5.5rem;
+    width: 6rem;
 }
 
 .rubriques-input input{

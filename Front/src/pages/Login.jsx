@@ -9,8 +9,7 @@ function Login(){
                 email:email,
                 password:password
             })
-            console.log(response.data);
-            console.log("test");
+            localStorage.setItem('token', response.data.token)
             
             if (response.status === 200) {
                 window.location.href = '/Dashboard'

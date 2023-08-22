@@ -9,31 +9,30 @@ function generateBase36Number() {
 }
 
 export default function Creationbar({ input, setInput, rub, setRub }) {
-   
-
+    
     const onFormSubmit = async (e) => {
-        const rubKey = generateBase36Number();
-        e.preventDefault();
-        setRub([...rub, { title: input, key: rubKey, id: uuidv4() }])
-        setInput('');
-        // try {
-        //     // Send rubrique data to the backend API
-        //     const response = await axios.post('http://localhost:3000/create-rubrique', {
-        //         title: input,
-        //         key: rubKey,
-        //     });
-
-        //     // Assuming the backend responds with the created rubrique object
-        //     const newRubrique = response.data;
-
-        //     // Update the rub state with the new rubrique
-        //     setRub([...rub, newRubrique]);
-
-        //     setInput(''); // Clear the input field
-        // } catch (error) {
-        //     console.error('Error creating rubrique:', error);
-        // }
-    };
+       e.preventDefault();
+       const rubKey = generateBase36Number();
+       try {
+           const response = await axios.post(
+               'http://localhost:3000/api/create-rubrique',
+               {
+                   title: input,
+                   key: rubKey,
+               },
+               {
+                   headers: {
+                       Authorization: `Bearer ${localStorage.getItem('token')}`,
+                   },
+               }
+           );
+           console.log(response.data.message);
+           setRub(response.data.data);
+       } catch (error) {
+           console.error('Error creating rubrique:', error);
+       }
+       setInput('');
+   };    
 
     return (
         <form className="creationbar-container" onSubmit={onFormSubmit}>
