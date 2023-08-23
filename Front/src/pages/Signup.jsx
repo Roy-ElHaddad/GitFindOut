@@ -22,15 +22,16 @@ function Signup(){
                 
                 if (response.status === 201) {
                     window.location.href = '/Dashboard'
-                    setErrorMessage('');
                 }
             }
             catch(err){
-                if (err.message === "Request failed with status code 409"){
-                    alert('Utilisateur déjà existant');
-                    setErrorMessage('Utilisateur déjà existant');
-                    window.location.href = '/Login'
-                }
+                setErrorMessage(err.response.data?.message || err.response.data)
+
+                // if (err.message === "Request failed with status code 409"){
+                //     alert('Utilisateur déjà existant');
+                //     setErrorMessage('Utilisateur déjà existant');
+                //     window.location.href = '/Login'
+                // }
                     console.log(err)} 
         }
     }
