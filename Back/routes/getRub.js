@@ -1,18 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user');
+const {User} = require('../models/user');
 const Rubrique = require('../models/rubrique');
 const jwt = require('jsonwebtoken');
 
 router.get('/', authenticate, async (req, res) => {
-   const userId = req.user._id
     try {
-        const ownerId = userId.toString()
+        const userId = req.user._id
+        const currentUser = await User.findById(userId)
+        const ownerId = currentUser.uniqueId
         // get the rubriques
         // let newRubrique = []
         const newRubrique = await Rubrique.find({ownerId:ownerId}).exec();
         console.log(newRubrique)
-        res.status(201).json({ message: 'Rubrique fetched successfully' , data: newRubrique });
+        res.status(201).json({ message: 'Rubrique fetched successfully' , data: newRubrique , userId: ownerId});
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Internal server error' });

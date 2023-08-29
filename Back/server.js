@@ -8,6 +8,7 @@ const authRoutes = require('./routes/auth');
 const createRubRouter = require('./routes/createRub');
 const getRubRouter = require('./routes/getRub');
 const removeRubRouter = require('./routes/removeRub');
+const getInfoRouter = require('./routes/getInfo');
 // const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 const userModel = require('./models/user');
@@ -26,7 +27,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/create-rubrique', createRubRouter);
 app.use('/api/get-rubrique', getRubRouter);
 app.use('/api/remove-rubrique', removeRubRouter);
-
+app.use('/api/getInfo', getInfoRouter);
 
 app.listen(process.env.PORT || 3000);
  

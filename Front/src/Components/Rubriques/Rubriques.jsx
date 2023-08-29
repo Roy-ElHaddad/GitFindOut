@@ -1,8 +1,21 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
 import "./Rubriques.css";
 
 export default function Rubriques({ rub, setRub }) {
+    const [isOpen, setIsOpen] = useState(false);
+    const [msg , setMsg] = useState('');
+    const [userId , setUserId] = useState('');
+
+    const openPopup = (key) => {
+        setMsg(key)
+        setIsOpen(true);
+    };
+  
+    const closePopup = () => {
+        setIsOpen(false);
+    };
+
     const onLoad = async () => {
        try {
            const response = await axios.get(
@@ -15,6 +28,7 @@ export default function Rubriques({ rub, setRub }) {
            );
            console.log(response.data);
            setRub(response.data.data);
+           setUserId(response.data.userId);
        } catch (error) {
            console.error('Error creating rubrique:', error);
        }
@@ -38,10 +52,9 @@ export default function Rubriques({ rub, setRub }) {
         } catch (error) {
             console.error('Error creating rubrique:', error);
         }
-        // const updatedRub = rub.filter((r) => r.key !== key);
-        // setRub(updatedRub);
     };
 
+    //TODO modify the rubriques
     const handleRoute = (key) => {
         const updatedRub = rub.filter((r) => r.key !== key);
         setRub(updatedRub);
@@ -64,13 +77,24 @@ export default function Rubriques({ rub, setRub }) {
                                 move_group
                             </span>
                         </button>
-                        <button
-                            onClick={() => handleRemoveRub(r.key)} // Call the handler with the rub's ID
-                        >
+                        <button onClick={() => handleRemoveRub(r.key)} >
                             <span className="material-symbols-outlined">
                                 remove_circle
                             </span>
                         </button>
+                        <button className="share" onClick={() => openPopup(r.key)}>
+                            <span className="material-symbols-outlined">
+                                share
+                            </span>
+                        </button>
+                            {isOpen && (
+                                <div className="popup">
+                                <div className="popup-content">
+                                    <span className="close" onClick={closePopup}>&times;</span>
+                                    <p>Le code pour partager cette rubrique est: {userId}{msg}</p>
+                                </div>
+                                </div>
+                            )}
                     </div>
                 </li>
             ))}

@@ -26,15 +26,10 @@ function Signup(){
             }
             catch(err){
                 setErrorMessage(err.response.data?.message || err.response.data)
-
-                // if (err.message === "Request failed with status code 409"){
-                //     alert('Utilisateur déjà existant');
-                //     setErrorMessage('Utilisateur déjà existant');
-                //     window.location.href = '/Login'
-                // }
-                    console.log(err)} 
+                console.log(err)} 
         }
     }
+    
     return(
            <div className='signupForm_section'>
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
