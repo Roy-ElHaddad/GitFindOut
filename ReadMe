@@ -1,0 +1,11 @@
+Pour pouvoir utiliser cette application en local il faut installer node.js et mongoDB sur le pc. 
+Une fois les installations fini vous pouvez activer cette application en local.
+Ouvrez une terminal naviger dans le fichier Back et faite la commande npm Start oubien npm devStart pour demarer en mode dev.
+Ouvrez une terminal naviger dans le fichier Font et faite la commande npm run dev.
+Maintenan votre application est fonctionnel il suffi juste de naviger dans le lien affichier dans le terminal.
+
+################################
+Creez un fichier dans Back nomer .env et coller ces information dedans 
+MONGODB_URL='mongodb://127.0.0.1:27017/test'
+SALT = 10
+JWT_PRIVATE_KEY = 'PRIVATE_KEY'
