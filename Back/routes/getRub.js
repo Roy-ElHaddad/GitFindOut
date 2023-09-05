@@ -20,6 +20,27 @@ router.get('/', authenticate, async (req, res) => {
     }
 });
 
+router.get('/search', authenticate, async (req, res) => {
+    try {
+        const userId = req.user._id
+        const currentUser = await User.findById(userId)
+        const ownerId = currentUser.uniqueId
+        const title = req.query.title
+        console.log("the title is" + title)
+        let newRubrique = []
+        if (title.length === 0) {
+            newRubrique = await Rubrique.find({ownerId:ownerId}).exec();
+        }else{
+            newRubrique = await Rubrique.find({ownerId:ownerId ,  title:{ $regex: title, $options: "i" }}).exec();
+        }
+        console.log(newRubrique)
+        res.status(201).json({ message: 'Rubrique fetched successfully' , data: newRubrique , userId: ownerId});
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
 function authenticate(req, res , next) {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1] ;

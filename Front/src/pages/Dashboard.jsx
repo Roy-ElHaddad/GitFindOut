@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import SearchBar from "../Components/Searchbar/SearchBar"
+import Searchbar from '../Components/SearchBar/SearchBar';
 import Creationbar from "../Components/CreationBar/CreationBar"
 import Rubriques from "../Components/Rubriques/Rubriques"
 
@@ -9,7 +9,7 @@ export default function Dashboard(){
 
     return(
         <>
-        <SearchBar />
+        <Searchbar setRub={setRub}/>
         <Creationbar input={input} setInput={setInput} rub={rub} setRub={setRub} />
         <Rubriques  rub ={rub} setRub={setRub}/>
 

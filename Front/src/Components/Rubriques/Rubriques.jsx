@@ -6,7 +6,16 @@ export default function Rubriques({ rub, setRub }) {
     const [isOpen, setIsOpen] = useState(false);
     const [msg , setMsg] = useState('');
     const [userId , setUserId] = useState('');
-
+    const [errorMessage , setErrorMessage] = useState('');
+    
+    useEffect(() => {
+        if (rub.length === 0) {
+            setErrorMessage("Pas de rubriques trouvées");
+        } else {
+            setErrorMessage("");
+        }
+    }, [rub])
+    
     const openPopup = (key) => {
         setMsg(key)
         setIsOpen(true);
@@ -65,6 +74,7 @@ export default function Rubriques({ rub, setRub }) {
 
     return (
         <div className="main-container">
+            {errorMessage && <h1 className="error-message">{errorMessage}</h1>}
             {rub.map((r) => (
                 <li className="rubriques-container" key={r.key}>
                     <h1> {r.key} :</h1>

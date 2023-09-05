@@ -105,3 +105,10 @@
   .share span{
     color : black ;
   }
+
+  .error-message {
+    margin:  8rem auto;
+    color: black;
+    font-weight: bolder;
+    font-size: 2rem;
+  }
