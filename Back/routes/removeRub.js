@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user');
+const {User} = require('../models/user');
 const Rubrique = require('../models/rubrique');
 const jwt = require('jsonwebtoken');
 
@@ -13,7 +13,9 @@ router.post('/', authenticate, async (req, res) => {
     try {
         console.log(req.body)
         const key  = req.body.key;
-        const ownerId = userId.toString()
+        // const ownerId = userId.toString()
+        const currentUser = await User.findById(userId)
+        const ownerId = currentUser.uniqueId
         // Delete a rubrique and send the rest 
         await Rubrique.deleteOne({  key : key , ownerId : ownerId});
         const newRubrique = await Rubrique.find({ownerId:ownerId}).exec();
